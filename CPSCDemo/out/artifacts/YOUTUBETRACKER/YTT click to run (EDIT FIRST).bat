@@ -1,0 +1,1 @@
+java --module-path "F:\javafx-sdk-18\lib" --add-modules javafx.controls,javafx.fxml -jar YOUTUBETRACKER.jar F:\my_ytt_data.csv

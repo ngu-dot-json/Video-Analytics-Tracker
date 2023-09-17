@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ytt.app.cpsc233demo3.MainController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="menuLoadDataOption" mnemonicParsing="false" onAction="#loadFile" text="Open" />
+            <MenuItem fx:id="menuSaveDataOption" mnemonicParsing="false" onAction="#saveFileChooser" text="Save As" />
+            <MenuItem fx:id="menuQuitOption" mnemonicParsing="false" onAction="#menuQuitAction" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem fx:id="menuAboutYTTOption" mnemonicParsing="false" onAction="#menuAboutAction" text="About YTT" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane dividerPositions="0.30011135857461024, 0.6998886414253898" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane>
+          <children>
+            <Label alignment="CENTER" layoutX="20.0" layoutY="73.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Data Input" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="20.0">
+              <font>
+                <Font name="Arial Bold" size="18.0" fx:id="x1" />
+              </font>
+              <textFill>
+                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+              </textFill>
+            </Label>
+            <Button fx:id="addCategoryButton" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" onAction="#setAddCategoryButtonOnClick" prefHeight="26.0" prefWidth="159.0" text="Add Category" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Button fx:id="addNewVideoButton" layoutX="20.0" layoutY="135.0" mnemonicParsing="false" onAction="#setAddNewVideoButtonOnClick" onMouseClicked="#loadCategoryFunction" prefHeight="26.0" prefWidth="159.0" text="Add Watched Video" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label alignment="CENTER" layoutX="20.0" layoutY="206.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Data Output" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="20.0">
+              <font>
+                <Font name="Arial Bold" size="18.0" fx:id="x11" />
+              </font>
+              <textFill>
+                <Color red="0.624" green="0.624" blue="0.624" fx:id="x21" />
+              </textFill>
+            </Label>
+            <Button fx:id="totalMinsWatchedButton" layoutX="20.0" layoutY="235.0" mnemonicParsing="false" onAction="#totalMinsWatchedButtonOnClick" prefHeight="26.0" prefWidth="159.0" text="Total Minutes Watched" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Button fx:id="totalVideosWatchedButton" layoutX="20.0" layoutY="265.0" mnemonicParsing="false" onAction="#totalVideosWatchedButtonOnClick" prefHeight="26.0" prefWidth="159.0" text="Total Videos Watched" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Button fx:id="watchtimeCategoryButton" layoutX="20.0" layoutY="323.0" mnemonicParsing="false" onAction="#setWatchtimeCategoryButtonOnClick" onMouseClicked="#loadCategoryFunction" prefHeight="26.0" prefWidth="159.0" text="Watchtime for Category" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Button fx:id="top5WatchTimeButton" layoutX="20.0" layoutY="353.0" mnemonicParsing="false" onAction="#top5WatchTimeOnClick" prefHeight="26.0" prefWidth="159.0" text="Top 5 Watch Time" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Button fx:id="top5VideoCountButton" layoutX="20.0" layoutY="382.0" mnemonicParsing="false" onAction="#top5VideoCountOnClick" prefHeight="26.0" prefWidth="159.0" text="Top 5 Video Count" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Button fx:id="topWatchTimeButton" layoutX="20.0" layoutY="412.0" mnemonicParsing="false" onAction="#topWatchTimeOnClick" prefHeight="26.0" prefWidth="159.0" text="Top Watch Time" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Button fx:id="topVideoCountButton" layoutX="20.0" layoutY="442.0" mnemonicParsing="false" onAction="#topVideoCountOnClick" prefHeight="26.0" prefWidth="159.0" text="Top Video Count" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Button fx:id="listCategoriesButton" layoutX="20.0" layoutY="472.0" mnemonicParsing="false" onAction="#setListCategoriesButtonOnClick" prefHeight="26.0" prefWidth="159.0" text="List of Categories" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Button fx:id="printAllButton" layoutX="20.0" layoutY="502.0" mnemonicParsing="false" onAction="#setPrintAllButtonOnClick" prefHeight="26.0" prefWidth="159.0" text="Print All Outputs" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label alignment="CENTER" layoutX="26.0" layoutY="36.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Input Menu" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+              <font>
+                <Font name="Arial Bold" size="20.0" fx:id="x12" />
+              </font>
+              <textFill>
+                <Color red="0.624" green="0.624" blue="0.624" fx:id="x22" />
+              </textFill>
+            </Label>
+            <Button fx:id="longestVideoWatchedButton" layoutX="20.0" layoutY="294.0" mnemonicParsing="false" onAction="#longestVideoWatchedButtonOnClick" prefHeight="26.0" prefWidth="159.0" text="Longest Video Watched" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+          </children>
+        </AnchorPane>
+        <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="392.0">
+          <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Main Output Menu" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+              <font>
+                <Font name="Arial Bold" size="20.0" />
+              </font>
+              <textFill>
+                <Color red="0.624" green="0.624" blue="0.624" fx:id="x23" />
+              </textFill>
+            </Label>
+            <TextArea fx:id="mainTextArea" editable="false" layoutX="76.0" layoutY="68.0" prefHeight="479.0" prefWidth="272.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="50.0" />
+          </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="551.0" prefWidth="310.0">
+          <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Sub Output Menu" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+              <font>
+                <Font name="Arial Bold" size="20.0" />
+              </font></Label>
+            <TextArea fx:id="subTextArea" editable="false" layoutX="33.0" layoutY="99.0" prefHeight="165.0" prefWidth="216.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="50.0" />
+            <Button fx:id="subAddVideoButton" disable="true" layoutX="40.0" layoutY="414.0" mnemonicParsing="false" onAction="#setSubAddVideoButtonOnClick" text="Add Video!" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+            <Button fx:id="subAddCategoryButton" disable="true" layoutX="40.0" layoutY="272.0" mnemonicParsing="false" onAction="#setSubAddCategoryButtonOnClick" text="Add Category!" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+            <Button fx:id="subCheckWatchtimeButton" disable="true" layoutX="40.0" layoutY="495.0" mnemonicParsing="false" onAction="#setSubCheckWatchtimeButtonOnClick" text="Check Watch Time!" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+            <ComboBox fx:id="addVideoCategoryCB" disable="true" layoutX="40.0" layoutY="385.0" prefHeight="27.0" prefWidth="186.0" promptText="Category Selection" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+            <ComboBox fx:id="watchTimeCB" disable="true" layoutX="40.0" layoutY="467.0" prefHeight="27.0" prefWidth="186.0" promptText="Category Selection" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+            <TextField fx:id="categoryNameTF" disable="true" layoutX="43.0" layoutY="245.0" prefHeight="26.0" prefWidth="186.0" promptText="Category Name" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+            <TextField fx:id="videoNameTF" disable="true" layoutX="40.0" layoutY="329.0" prefHeight="26.0" prefWidth="186.0" promptText="Video Name" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+            <TextField fx:id="videoLengthTF" disable="true" layoutX="40.0" layoutY="357.0" prefHeight="26.0" prefWidth="186.0" promptText="Video Length" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label fx:id="leftStatus" maxHeight="1.7976931348623157E308" maxWidth="-1.0" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
